@@ -1,0 +1,7 @@
+category: Audio Gnome
+requires: python python-gnome2 python-gobject2 python-gtk2 python-gtkhtml2 sox timidity++
+sdesc: "GNOME ear training program"
+ldesc: "Solfege is a free ear training program written in python using 
+gtk+ and PyGTK. Ear training is a big subject with many connections to 
+music theory and performance of music, so you need some basic knowledge 
+about music theory."
