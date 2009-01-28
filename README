@@ -6,12 +6,12 @@ theory and performance of music, so you need some basic knowledge about
 music theory.
 
 Runtime requirements:
-  cygwin-1.5.25-11
-  python-2.5.2-1
-  python-gnome2-2.20.1-1
-  python-gobject2-2.14.1-1
-  python-gtk2-2.12.1-1
-  python-gtkhtml2-2.19.1-1
+  cygwin-1.5.25-15
+  python-2.5.4-1
+  python-gnome2-2.20.3-1
+  python-gobject2-2.15.4-1
+  python-gtk2-2.13.0-1
+  python-gtkhtml2-2.19.1-2
   sox
   timidity++
 
@@ -35,31 +35,30 @@ Canonical download:
 -------------------------------------------
 
 Build instructions:
-  unpack solfege-3.10.4-X-src.tar.bz2
+  unpack solfege-3.12.1-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./solfege-3.10.4-X.cygport all
+  cygport ./solfege-3.12.1-X.cygport all
 
 This will create:
-  /usr/src/solfege-3.10.4-X-src.tar.bz2
-  /usr/src/solfege-3.10.4-X.tar.bz2
+  /usr/src/solfege-3.12.1-X-src.tar.bz2
+  /usr/src/solfege-3.12.1-X.tar.bz2
 
 -------------------------------------------
 
 Files included in the binary package:
 
   /etc/solfege
-  /usr/bin/lessonfile_editor
   /usr/bin/solfege
   /usr/lib/solfege/_solfege_c_midi.dll
   /usr/share/applications/solfege.desktop
-  /usr/share/doc/solfege-3.10.4/AUTHORS
-  /usr/share/doc/solfege-3.10.4/COPYING
-  /usr/share/doc/solfege-3.10.4/ChangeLog
-  /usr/share/doc/solfege-3.10.4/FAQ
-  /usr/share/doc/solfege-3.10.4/INSTALL
-  /usr/share/doc/solfege-3.10.4/README
+  /usr/share/doc/solfege-3.12.1/AUTHORS
+  /usr/share/doc/solfege-3.12.1/COPYING
+  /usr/share/doc/solfege-3.12.1/ChangeLog
+  /usr/share/doc/solfege-3.12.1/FAQ
+  /usr/share/doc/solfege-3.12.1/INSTALL
+  /usr/share/doc/solfege-3.12.1/README
   /usr/share/locale/cs/LC_MESSAGES/solfege.mo
   /usr/share/locale/da/LC_MESSAGES/solfege.mo
   /usr/share/locale/de/LC_MESSAGES/solfege.mo
@@ -69,15 +68,14 @@ Files included in the binary package:
   /usr/share/locale/it/LC_MESSAGES/solfege.mo
   /usr/share/locale/nb/LC_MESSAGES/solfege.mo
   /usr/share/locale/nl/LC_MESSAGES/solfege.mo
+  /usr/share/locale/pl/LC_MESSAGES/solfege.mo
   /usr/share/locale/pt_BR/LC_MESSAGES/solfege.mo
   /usr/share/locale/ru/LC_MESSAGES/solfege.mo
   /usr/share/locale/sv/LC_MESSAGES/solfege.mo
   /usr/share/locale/tr/LC_MESSAGES/solfege.mo
   /usr/share/locale/vi/LC_MESSAGES/solfege.mo
-  /usr/share/man/man1/lessonfile_editor.1.gz
   /usr/share/man/man1/solfege.1.gz
   /usr/share/pixmaps/solfege.png
-  /usr/share/solfege/debugtree.txt
   /usr/share/solfege/default.config
   /usr/share/solfege/example-lesson-files/chord-satb
   /usr/share/solfege/example-lesson-files/example-1
@@ -220,6 +218,7 @@ Files included in the binary package:
   /usr/share/solfege/help/C/elembuilder.html
   /usr/share/solfege/help/C/extending-solfege.html
   /usr/share/solfege/help/C/figures/chord.png
+  /usr/share/solfege/help/C/figures/chordname-example.png
   /usr/share/solfege/help/C/figures/dictation.png
   /usr/share/solfege/help/C/figures/elembuilder-harmonic-progressions.png
   /usr/share/solfege/help/C/figures/id-interval-buttons-thirds.png
@@ -229,13 +228,16 @@ Files included in the binary package:
   /usr/share/solfege/help/C/figures/identifybpm.png
   /usr/share/solfege/help/C/figures/idtone.png
   /usr/share/solfege/help/C/figures/nameinterval.png
+  /usr/share/solfege/help/C/figures/plabel-Cmaj7.png
   /usr/share/solfege/help/C/figures/preferences-external-programs.png
   /usr/share/solfege/help/C/figures/preferences-gui.png
   /usr/share/solfege/help/C/figures/preferences-midi.png
   /usr/share/solfege/help/C/figures/preferences-practise.png
   /usr/share/solfege/help/C/figures/preferences-sound-setup.png
   /usr/share/solfege/help/C/figures/preferences-user.png
+  /usr/share/solfege/help/C/figures/progressionlabel-example-1.png
   /usr/share/solfege/help/C/figures/rhythm.png
+  /usr/share/solfege/help/C/figures/rnc-example.png
   /usr/share/solfege/help/C/figures/singchord.png
   /usr/share/solfege/help/C/figures/singinterval.png
   /usr/share/solfege/help/C/figures/trainingset-editor.png
@@ -271,6 +273,7 @@ Files included in the binary package:
   /usr/share/solfege/help/C/melodicinterval-module.html
   /usr/share/solfege/help/C/melodicinterval.html
   /usr/share/solfege/help/C/midi-instrument-names.html
+  /usr/share/solfege/help/C/mpd-module.html
   /usr/share/solfege/help/C/music-theory.html
   /usr/share/solfege/help/C/nameinterval-module.html
   /usr/share/solfege/help/C/nameinterval.html
@@ -598,10 +601,10 @@ Files included in the binary package:
   /usr/share/solfege/help/fr/melodicinterval-module.html
   /usr/share/solfege/help/fr/melodicinterval.html
   /usr/share/solfege/help/fr/midi-instrument-names.html
+  /usr/share/solfege/help/fr/mpd-module.html
   /usr/share/solfege/help/fr/music-theory.html
   /usr/share/solfege/help/fr/nameinterval-module.html
   /usr/share/solfege/help/fr/nameinterval.html
-  /usr/share/solfege/help/fr/one-big-page.html
   /usr/share/solfege/help/fr/online-resources.html
   /usr/share/solfege/help/fr/preferences-window.html
   /usr/share/solfege/help/fr/rhythm-module.html
@@ -667,10 +670,10 @@ Files included in the binary package:
   /usr/share/solfege/help/nb/melodicinterval-module.html
   /usr/share/solfege/help/nb/melodicinterval.html
   /usr/share/solfege/help/nb/midi-instrument-names.html
+  /usr/share/solfege/help/nb/mpd-module.html
   /usr/share/solfege/help/nb/music-theory.html
   /usr/share/solfege/help/nb/nameinterval-module.html
   /usr/share/solfege/help/nb/nameinterval.html
-  /usr/share/solfege/help/nb/one-big-page.html
   /usr/share/solfege/help/nb/online-resources.html
   /usr/share/solfege/help/nb/preferences-window.html
   /usr/share/solfege/help/nb/rhythm-module.html
@@ -735,10 +738,10 @@ Files included in the binary package:
   /usr/share/solfege/help/pt_BR/melodicinterval-module.html
   /usr/share/solfege/help/pt_BR/melodicinterval.html
   /usr/share/solfege/help/pt_BR/midi-instrument-names.html
+  /usr/share/solfege/help/pt_BR/mpd-module.html
   /usr/share/solfege/help/pt_BR/music-theory.html
   /usr/share/solfege/help/pt_BR/nameinterval-module.html
   /usr/share/solfege/help/pt_BR/nameinterval.html
-  /usr/share/solfege/help/pt_BR/one-big-page.html
   /usr/share/solfege/help/pt_BR/online-resources.html
   /usr/share/solfege/help/pt_BR/preferences-window.html
   /usr/share/solfege/help/pt_BR/rhythm-module.html
@@ -758,6 +761,58 @@ Files included in the binary package:
   /usr/share/solfege/help/pt_BR/trainingset-editor.html
   /usr/share/solfege/help/pt_BR/twelvetone.html
   /usr/share/solfege/help/pt_BR/welcome.html
+  /usr/share/solfege/help/ru/appendix-not-documentation.html
+  /usr/share/solfege/help/ru/bug-reporting.html
+  /usr/share/solfege/help/ru/chord-module.html
+  /usr/share/solfege/help/ru/chord.html
+  /usr/share/solfege/help/ru/compareintervals-module.html
+  /usr/share/solfege/help/ru/dictation-module.html
+  /usr/share/solfege/help/ru/dictation.html
+  /usr/share/solfege/help/ru/ear-training-test-printout-editor.html
+  /usr/share/solfege/help/ru/elembuilder-module.html
+  /usr/share/solfege/help/ru/elembuilder.html
+  /usr/share/solfege/help/ru/extending-solfege.html
+  /usr/share/solfege/help/ru/gpl.html
+  /usr/share/solfege/help/ru/harmonicinterval-module.html
+  /usr/share/solfege/help/ru/harmonicinterval.html
+  /usr/share/solfege/help/ru/idbyname-cadences.html
+  /usr/share/solfege/help/ru/idbyname-chords.html
+  /usr/share/solfege/help/ru/idbyname-intonation.html
+  /usr/share/solfege/help/ru/idbyname-module.html
+  /usr/share/solfege/help/ru/identifybpm.html
+  /usr/share/solfege/help/ru/idproperty-module.html
+  /usr/share/solfege/help/ru/idproperty.html
+  /usr/share/solfege/help/ru/idtone-module.html
+  /usr/share/solfege/help/ru/idtone.html
+  /usr/share/solfege/help/ru/index.html
+  /usr/share/solfege/help/ru/inverting-intervals.html
+  /usr/share/solfege/help/ru/lesson-files.html
+  /usr/share/solfege/help/ru/melodicinterval-module.html
+  /usr/share/solfege/help/ru/melodicinterval.html
+  /usr/share/solfege/help/ru/midi-instrument-names.html
+  /usr/share/solfege/help/ru/mpd-module.html
+  /usr/share/solfege/help/ru/music-theory.html
+  /usr/share/solfege/help/ru/nameinterval-module.html
+  /usr/share/solfege/help/ru/nameinterval.html
+  /usr/share/solfege/help/ru/online-resources.html
+  /usr/share/solfege/help/ru/preferences-window.html
+  /usr/share/solfege/help/ru/rhythm-module.html
+  /usr/share/solfege/help/ru/rhythm.html
+  /usr/share/solfege/help/ru/rhythmtapping-module.html
+  /usr/share/solfege/help/ru/rhythmtapping2-module.html
+  /usr/share/solfege/help/ru/rhythmtapping2.html
+  /usr/share/solfege/help/ru/scales.html
+  /usr/share/solfege/help/ru/singanswer-module.html
+  /usr/share/solfege/help/ru/singchord-module.html
+  /usr/share/solfege/help/ru/singchord.html
+  /usr/share/solfege/help/ru/singinterval-module.html
+  /usr/share/solfege/help/ru/singinterval.html
+  /usr/share/solfege/help/ru/solfege-exercise-helps.html
+  /usr/share/solfege/help/ru/solfege-intro.html
+  /usr/share/solfege/help/ru/theory-intervals.html
+  /usr/share/solfege/help/ru/trainingset-editor.html
+  /usr/share/solfege/help/ru/twelvetone.html
+  /usr/share/solfege/help/ru/welcome.html
   /usr/share/solfege/help/style.css
   /usr/share/solfege/help/tr/appendix-not-documentation.html
   /usr/share/solfege/help/tr/bug-reporting.html
@@ -805,10 +860,10 @@ Files included in the binary package:
   /usr/share/solfege/help/tr/melodicinterval-module.html
   /usr/share/solfege/help/tr/melodicinterval.html
   /usr/share/solfege/help/tr/midi-instrument-names.html
+  /usr/share/solfege/help/tr/mpd-module.html
   /usr/share/solfege/help/tr/music-theory.html
   /usr/share/solfege/help/tr/nameinterval-module.html
   /usr/share/solfege/help/tr/nameinterval.html
-  /usr/share/solfege/help/tr/one-big-page.html
   /usr/share/solfege/help/tr/online-resources.html
   /usr/share/solfege/help/tr/preferences-window.html
   /usr/share/solfege/help/tr/rhythm-module.html
@@ -829,7 +884,10 @@ Files included in the binary package:
   /usr/share/solfege/help/tr/twelvetone.html
   /usr/share/solfege/help/tr/welcome.html
   /usr/share/solfege/helpbrowser.xml
-  /usr/share/solfege/learningtree.txt
+  /usr/share/solfege/learningtrees/csound-tree.txt
+  /usr/share/solfege/learningtrees/debugtree.txt
+  /usr/share/solfege/learningtrees/learningtree.txt
+  /usr/share/solfege/learningtrees/mma
   /usr/share/solfege/lesson-files/altered-1
   /usr/share/solfege/lesson-files/altered-2
   /usr/share/solfege/lesson-files/barnesanger
@@ -872,6 +930,166 @@ Files included in the binary package:
   /usr/share/solfege/lesson-files/csound-fifth-0.996
   /usr/share/solfege/lesson-files/csound-fifth-0.997
   /usr/share/solfege/lesson-files/csound-fifth-0.998
+  /usr/share/solfege/lesson-files/csound-intonation-harmonic-maj2-10cent
+  /usr/share/solfege/lesson-files/csound-intonation-harmonic-maj2-15cent
+  /usr/share/solfege/lesson-files/csound-intonation-harmonic-maj2-20cent
+  /usr/share/solfege/lesson-files/csound-intonation-harmonic-maj2-30cent
+  /usr/share/solfege/lesson-files/csound-intonation-harmonic-maj2-40cent
+  /usr/share/solfege/lesson-files/csound-intonation-harmonic-maj2-5cent
+  /usr/share/solfege/lesson-files/csound-intonation-harmonic-maj2-6cent
+  /usr/share/solfege/lesson-files/csound-intonation-harmonic-maj2-8cent
+  /usr/share/solfege/lesson-files/csound-intonation-harmonic-maj3-10cent
+  /usr/share/solfege/lesson-files/csound-intonation-harmonic-maj3-15cent
+  /usr/share/solfege/lesson-files/csound-intonation-harmonic-maj3-20cent
+  /usr/share/solfege/lesson-files/csound-intonation-harmonic-maj3-30cent
+  /usr/share/solfege/lesson-files/csound-intonation-harmonic-maj3-40cent
+  /usr/share/solfege/lesson-files/csound-intonation-harmonic-maj3-5cent
+  /usr/share/solfege/lesson-files/csound-intonation-harmonic-maj3-6cent
+  /usr/share/solfege/lesson-files/csound-intonation-harmonic-maj3-8cent
+  /usr/share/solfege/lesson-files/csound-intonation-harmonic-maj6-10cent
+  /usr/share/solfege/lesson-files/csound-intonation-harmonic-maj6-15cent
+  /usr/share/solfege/lesson-files/csound-intonation-harmonic-maj6-20cent
+  /usr/share/solfege/lesson-files/csound-intonation-harmonic-maj6-30cent
+  /usr/share/solfege/lesson-files/csound-intonation-harmonic-maj6-40cent
+  /usr/share/solfege/lesson-files/csound-intonation-harmonic-maj6-5cent
+  /usr/share/solfege/lesson-files/csound-intonation-harmonic-maj6-6cent
+  /usr/share/solfege/lesson-files/csound-intonation-harmonic-maj6-8cent
+  /usr/share/solfege/lesson-files/csound-intonation-harmonic-maj7-10cent
+  /usr/share/solfege/lesson-files/csound-intonation-harmonic-maj7-15cent
+  /usr/share/solfege/lesson-files/csound-intonation-harmonic-maj7-20cent
+  /usr/share/solfege/lesson-files/csound-intonation-harmonic-maj7-30cent
+  /usr/share/solfege/lesson-files/csound-intonation-harmonic-maj7-40cent
+  /usr/share/solfege/lesson-files/csound-intonation-harmonic-maj7-5cent
+  /usr/share/solfege/lesson-files/csound-intonation-harmonic-maj7-6cent
+  /usr/share/solfege/lesson-files/csound-intonation-harmonic-maj7-8cent
+  /usr/share/solfege/lesson-files/csound-intonation-harmonic-min2-10cent
+  /usr/share/solfege/lesson-files/csound-intonation-harmonic-min2-15cent
+  /usr/share/solfege/lesson-files/csound-intonation-harmonic-min2-20cent
+  /usr/share/solfege/lesson-files/csound-intonation-harmonic-min2-30cent
+  /usr/share/solfege/lesson-files/csound-intonation-harmonic-min2-40cent
+  /usr/share/solfege/lesson-files/csound-intonation-harmonic-min2-5cent
+  /usr/share/solfege/lesson-files/csound-intonation-harmonic-min2-6cent
+  /usr/share/solfege/lesson-files/csound-intonation-harmonic-min2-8cent
+  /usr/share/solfege/lesson-files/csound-intonation-harmonic-min3-10cent
+  /usr/share/solfege/lesson-files/csound-intonation-harmonic-min3-15cent
+  /usr/share/solfege/lesson-files/csound-intonation-harmonic-min3-20cent
+  /usr/share/solfege/lesson-files/csound-intonation-harmonic-min3-30cent
+  /usr/share/solfege/lesson-files/csound-intonation-harmonic-min3-40cent
+  /usr/share/solfege/lesson-files/csound-intonation-harmonic-min3-5cent
+  /usr/share/solfege/lesson-files/csound-intonation-harmonic-min3-6cent
+  /usr/share/solfege/lesson-files/csound-intonation-harmonic-min3-8cent
+  /usr/share/solfege/lesson-files/csound-intonation-harmonic-min6-10cent
+  /usr/share/solfege/lesson-files/csound-intonation-harmonic-min6-15cent
+  /usr/share/solfege/lesson-files/csound-intonation-harmonic-min6-20cent
+  /usr/share/solfege/lesson-files/csound-intonation-harmonic-min6-30cent
+  /usr/share/solfege/lesson-files/csound-intonation-harmonic-min6-40cent
+  /usr/share/solfege/lesson-files/csound-intonation-harmonic-min6-5cent
+  /usr/share/solfege/lesson-files/csound-intonation-harmonic-min6-6cent
+  /usr/share/solfege/lesson-files/csound-intonation-harmonic-min6-8cent
+  /usr/share/solfege/lesson-files/csound-intonation-harmonic-min7-10cent
+  /usr/share/solfege/lesson-files/csound-intonation-harmonic-min7-15cent
+  /usr/share/solfege/lesson-files/csound-intonation-harmonic-min7-20cent
+  /usr/share/solfege/lesson-files/csound-intonation-harmonic-min7-30cent
+  /usr/share/solfege/lesson-files/csound-intonation-harmonic-min7-40cent
+  /usr/share/solfege/lesson-files/csound-intonation-harmonic-min7-5cent
+  /usr/share/solfege/lesson-files/csound-intonation-harmonic-min7-6cent
+  /usr/share/solfege/lesson-files/csound-intonation-harmonic-min7-8cent
+  /usr/share/solfege/lesson-files/csound-intonation-harmonic-p4-10cent
+  /usr/share/solfege/lesson-files/csound-intonation-harmonic-p4-15cent
+  /usr/share/solfege/lesson-files/csound-intonation-harmonic-p4-20cent
+  /usr/share/solfege/lesson-files/csound-intonation-harmonic-p4-30cent
+  /usr/share/solfege/lesson-files/csound-intonation-harmonic-p4-40cent
+  /usr/share/solfege/lesson-files/csound-intonation-harmonic-p4-5cent
+  /usr/share/solfege/lesson-files/csound-intonation-harmonic-p4-6cent
+  /usr/share/solfege/lesson-files/csound-intonation-harmonic-p4-8cent
+  /usr/share/solfege/lesson-files/csound-intonation-harmonic-p5-10cent
+  /usr/share/solfege/lesson-files/csound-intonation-harmonic-p5-15cent
+  /usr/share/solfege/lesson-files/csound-intonation-harmonic-p5-20cent
+  /usr/share/solfege/lesson-files/csound-intonation-harmonic-p5-30cent
+  /usr/share/solfege/lesson-files/csound-intonation-harmonic-p5-40cent
+  /usr/share/solfege/lesson-files/csound-intonation-harmonic-p5-5cent
+  /usr/share/solfege/lesson-files/csound-intonation-harmonic-p5-6cent
+  /usr/share/solfege/lesson-files/csound-intonation-harmonic-p5-8cent
+  /usr/share/solfege/lesson-files/csound-intonation-maj2-10cent
+  /usr/share/solfege/lesson-files/csound-intonation-maj2-15cent
+  /usr/share/solfege/lesson-files/csound-intonation-maj2-20cent
+  /usr/share/solfege/lesson-files/csound-intonation-maj2-30cent
+  /usr/share/solfege/lesson-files/csound-intonation-maj2-40cent
+  /usr/share/solfege/lesson-files/csound-intonation-maj2-5cent
+  /usr/share/solfege/lesson-files/csound-intonation-maj2-6cent
+  /usr/share/solfege/lesson-files/csound-intonation-maj2-8cent
+  /usr/share/solfege/lesson-files/csound-intonation-maj3-10cent
+  /usr/share/solfege/lesson-files/csound-intonation-maj3-15cent
+  /usr/share/solfege/lesson-files/csound-intonation-maj3-20cent
+  /usr/share/solfege/lesson-files/csound-intonation-maj3-30cent
+  /usr/share/solfege/lesson-files/csound-intonation-maj3-40cent
+  /usr/share/solfege/lesson-files/csound-intonation-maj3-5cent
+  /usr/share/solfege/lesson-files/csound-intonation-maj3-6cent
+  /usr/share/solfege/lesson-files/csound-intonation-maj3-8cent
+  /usr/share/solfege/lesson-files/csound-intonation-maj6-10cent
+  /usr/share/solfege/lesson-files/csound-intonation-maj6-15cent
+  /usr/share/solfege/lesson-files/csound-intonation-maj6-20cent
+  /usr/share/solfege/lesson-files/csound-intonation-maj6-30cent
+  /usr/share/solfege/lesson-files/csound-intonation-maj6-40cent
+  /usr/share/solfege/lesson-files/csound-intonation-maj6-5cent
+  /usr/share/solfege/lesson-files/csound-intonation-maj6-6cent
+  /usr/share/solfege/lesson-files/csound-intonation-maj6-8cent
+  /usr/share/solfege/lesson-files/csound-intonation-maj7-10cent
+  /usr/share/solfege/lesson-files/csound-intonation-maj7-15cent
+  /usr/share/solfege/lesson-files/csound-intonation-maj7-20cent
+  /usr/share/solfege/lesson-files/csound-intonation-maj7-30cent
+  /usr/share/solfege/lesson-files/csound-intonation-maj7-40cent
+  /usr/share/solfege/lesson-files/csound-intonation-maj7-5cent
+  /usr/share/solfege/lesson-files/csound-intonation-maj7-6cent
+  /usr/share/solfege/lesson-files/csound-intonation-maj7-8cent
+  /usr/share/solfege/lesson-files/csound-intonation-min2-10cent
+  /usr/share/solfege/lesson-files/csound-intonation-min2-15cent
+  /usr/share/solfege/lesson-files/csound-intonation-min2-20cent
+  /usr/share/solfege/lesson-files/csound-intonation-min2-30cent
+  /usr/share/solfege/lesson-files/csound-intonation-min2-40cent
+  /usr/share/solfege/lesson-files/csound-intonation-min2-5cent
+  /usr/share/solfege/lesson-files/csound-intonation-min2-6cent
+  /usr/share/solfege/lesson-files/csound-intonation-min2-8cent
+  /usr/share/solfege/lesson-files/csound-intonation-min3-10cent
+  /usr/share/solfege/lesson-files/csound-intonation-min3-15cent
+  /usr/share/solfege/lesson-files/csound-intonation-min3-20cent
+  /usr/share/solfege/lesson-files/csound-intonation-min3-30cent
+  /usr/share/solfege/lesson-files/csound-intonation-min3-40cent
+  /usr/share/solfege/lesson-files/csound-intonation-min3-5cent
+  /usr/share/solfege/lesson-files/csound-intonation-min3-6cent
+  /usr/share/solfege/lesson-files/csound-intonation-min3-8cent
+  /usr/share/solfege/lesson-files/csound-intonation-min6-10cent
+  /usr/share/solfege/lesson-files/csound-intonation-min6-15cent
+  /usr/share/solfege/lesson-files/csound-intonation-min6-20cent
+  /usr/share/solfege/lesson-files/csound-intonation-min6-30cent
+  /usr/share/solfege/lesson-files/csound-intonation-min6-40cent
+  /usr/share/solfege/lesson-files/csound-intonation-min6-5cent
+  /usr/share/solfege/lesson-files/csound-intonation-min6-6cent
+  /usr/share/solfege/lesson-files/csound-intonation-min6-8cent
+  /usr/share/solfege/lesson-files/csound-intonation-min7-10cent
+  /usr/share/solfege/lesson-files/csound-intonation-min7-15cent
+  /usr/share/solfege/lesson-files/csound-intonation-min7-20cent
+  /usr/share/solfege/lesson-files/csound-intonation-min7-30cent
+  /usr/share/solfege/lesson-files/csound-intonation-min7-40cent
+  /usr/share/solfege/lesson-files/csound-intonation-min7-5cent
+  /usr/share/solfege/lesson-files/csound-intonation-min7-6cent
+  /usr/share/solfege/lesson-files/csound-intonation-min7-8cent
+  /usr/share/solfege/lesson-files/csound-intonation-p4-10cent
+  /usr/share/solfege/lesson-files/csound-intonation-p4-15cent
+  /usr/share/solfege/lesson-files/csound-intonation-p4-20cent
+  /usr/share/solfege/lesson-files/csound-intonation-p4-30cent
+  /usr/share/solfege/lesson-files/csound-intonation-p4-40cent
+  /usr/share/solfege/lesson-files/csound-intonation-p4-5cent
+  /usr/share/solfege/lesson-files/csound-intonation-p4-6cent
+  /usr/share/solfege/lesson-files/csound-intonation-p4-8cent
+  /usr/share/solfege/lesson-files/csound-intonation-p5-10cent
+  /usr/share/solfege/lesson-files/csound-intonation-p5-15cent
+  /usr/share/solfege/lesson-files/csound-intonation-p5-20cent
+  /usr/share/solfege/lesson-files/csound-intonation-p5-30cent
+  /usr/share/solfege/lesson-files/csound-intonation-p5-40cent
+  /usr/share/solfege/lesson-files/csound-intonation-p5-5cent
+  /usr/share/solfege/lesson-files/csound-intonation-p5-6cent
+  /usr/share/solfege/lesson-files/csound-intonation-p5-8cent
   /usr/share/solfege/lesson-files/diatonic-1
   /usr/share/solfege/lesson-files/diatonic-2
   /usr/share/solfege/lesson-files/fifth-small-pure-0.99
@@ -911,6 +1129,8 @@ Files included in the binary package:
   /usr/share/solfege/lesson-files/id-tone-cde-8
   /usr/share/solfege/lesson-files/id-tone-cde-9
   /usr/share/solfege/lesson-files/include/interval-elements
+  /usr/share/solfege/lesson-files/include/jazz-progression-elements
+  /usr/share/solfege/lesson-files/include/mma-grooves
   /usr/share/solfege/lesson-files/include/progression-elements
   /usr/share/solfege/lesson-files/include/sc-master
   /usr/share/solfege/lesson-files/interval_in_key_maj
@@ -959,6 +1179,9 @@ Files included in the binary package:
   /usr/share/solfege/lesson-files/melodic-intervals-up-7-9
   /usr/share/solfege/lesson-files/melodic-intervals-up-9
   /usr/share/solfege/lesson-files/melodic-intervals-up-tritonus-7
+  /usr/share/solfege/lesson-files/mma-1
+  /usr/share/solfege/lesson-files/mma-2
+  /usr/share/solfege/lesson-files/mma-3
   /usr/share/solfege/lesson-files/nameinterval-1
   /usr/share/solfege/lesson-files/nameinterval-2
   /usr/share/solfege/lesson-files/nameinterval-fifths
@@ -1107,8 +1330,9 @@ Files included in the binary package:
   /usr/share/solfege/lesson-files/share/fifth-small-220.00.wav
   /usr/share/solfege/lesson-files/share/fifth-small-247.5.wav
   /usr/share/solfege/lesson-files/share/fifth-small-293.33.wav
-  /usr/share/solfege/lesson-files/share/fil1.orc
   /usr/share/solfege/lesson-files/share/fil1.sco
+  /usr/share/solfege/lesson-files/share/sinus-ad.orc
+  /usr/share/solfege/lesson-files/share/sinus.orc
   /usr/share/solfege/lesson-files/sing-chord-tone
   /usr/share/solfege/lesson-files/sing-intervals
   /usr/share/solfege/lesson-files/sing-intervals-10
@@ -1136,6 +1360,10 @@ Files included in the binary package:
   /usr/share/solfege/lesson-files/singchord-5
   /usr/share/solfege/lesson-files/singchord-6
   /usr/share/solfege/lesson-files/singchord-all
+  /usr/share/solfege/lesson-files/solfa-17
+  /usr/share/solfege/lesson-files/solfa-17-C
+  /usr/share/solfege/lesson-files/solfa-7
+  /usr/share/solfege/lesson-files/solfa-7-C
   /usr/share/solfege/lesson-files/tapping-all
   /usr/share/solfege/lesson-files/tapping-easy
   /usr/share/solfege/lesson-files/tapping-mid
@@ -1282,12 +1510,18 @@ Files included in the binary package:
   /usr/share/solfege/src/__init__.py
   /usr/share/solfege/src/__init__.pyc
   /usr/share/solfege/src/__init__.pyo
+  /usr/share/solfege/src/_version.py
+  /usr/share/solfege/src/_version.pyc
+  /usr/share/solfege/src/_version.pyo
   /usr/share/solfege/src/abstract.py
   /usr/share/solfege/src/abstract.pyc
   /usr/share/solfege/src/abstract.pyo
   /usr/share/solfege/src/app.py
   /usr/share/solfege/src/app.pyc
   /usr/share/solfege/src/app.pyo
+  /usr/share/solfege/src/buildinfo.py
+  /usr/share/solfege/src/buildinfo.pyc
+  /usr/share/solfege/src/buildinfo.pyo
   /usr/share/solfege/src/cfg.py
   /usr/share/solfege/src/cfg.pyc
   /usr/share/solfege/src/cfg.pyo
@@ -1300,9 +1534,6 @@ Files included in the binary package:
   /usr/share/solfege/src/compareintervals.py
   /usr/share/solfege/src/compareintervals.pyc
   /usr/share/solfege/src/compareintervals.pyo
-  /usr/share/solfege/src/configureoutput.py
-  /usr/share/solfege/src/configureoutput.pyc
-  /usr/share/solfege/src/configureoutput.pyo
   /usr/share/solfege/src/configwindow.py
   /usr/share/solfege/src/configwindow.pyc
   /usr/share/solfege/src/configwindow.pyo
@@ -1468,6 +1699,9 @@ Files included in the binary package:
   /usr/share/solfege/src/uuid.py
   /usr/share/solfege/src/uuid.pyc
   /usr/share/solfege/src/uuid.pyo
+  /usr/share/solfege/src/winlang.py
+  /usr/share/solfege/src/winlang.pyc
+  /usr/share/solfege/src/winlang.pyo
   /usr/share/solfege/src/winreg.py
   /usr/share/solfege/src/winreg.pyc
   /usr/share/solfege/src/winreg.pyo
@@ -1490,6 +1724,9 @@ Files included in the binary package:
 ------------------
 
 Port Notes:
+
+----- version 3.12.1-1 -----
+Version bump.
 
 ----- version 3.10.4-1 -----
 Version bump.
