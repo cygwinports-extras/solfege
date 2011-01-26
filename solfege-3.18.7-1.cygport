@@ -1,0 +1,27 @@
+inherit python
+
+DESCRIPTION="GNOME ear training program"
+HOMEPAGE="http://www.solfege.org/"
+SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
+PATCH_URI="3.18.7-cygwin-winmidi.patch"
+
+DIFF_EXCLUDES="help buildinfo.py configureoutput.py solfege.1 windowsinstaller.iss"
+
+MAKEOPTS+=" -j1"
+
+src_compile() {
+	lndirs
+	cd ${B}
+	cygconf \
+		--disable-oss-sound \
+		--enable-winmidi \
+		--enable-docbook-stylesheet=/usr/share/sgml/docbook/xsl-stylesheets/html/chunk.xsl
+	cygmake
+}
+
+src_install() {
+	cd ${B}
+	cyginstall
+	rm -f ${D}/etc/solfege
+	python_optimize /usr/share/solfege
+}
