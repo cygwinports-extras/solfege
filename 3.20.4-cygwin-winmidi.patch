@@ -1,24 +1,24 @@
---- origsrc/solfege-3.18.7/solfege/configwindow.py	2010-10-29 15:18:37.000000000 -0500
-+++ src/solfege-3.18.7/solfege/configwindow.py	2011-01-25 22:23:10.906080100 -0600
-@@ -39,7 +39,7 @@ from solfege.instrumentselector import n
+--- origsrc/solfege-3.20.4/solfege/configwindow.py	2011-10-21 08:33:26.000000000 -0500
++++ src/solfege-3.20.4/solfege/configwindow.py	2011-10-24 00:43:33.137707000 -0500
+@@ -45,7 +45,7 @@ except ImportError:
+     solfege.soundcard.alsa_sequencer = None
  
- import solfege
  
 -if sys.platform == 'win32':
 +if sys.platform == 'win32' or sys.platform == 'cygwin':
      try:
          from solfege.soundcard import winmidi
      except ImportError, e:
-@@ -394,7 +394,7 @@ class ConfigWindow(gtk.Dialog, cfg.Confi
-         #########
-         # sound #
-         #########
+@@ -492,7 +492,7 @@ class ConfigWindow(gtk.Dialog, cfg.Confi
+         self.g_expert_mode.connect('toggled', solfege.app.reset_exercise)
+         page_vbox.pack_start(self.g_expert_mode, False)
+     def create_sound_config(self):
 -        if sys.platform == 'win32':
 +        if sys.platform == 'win32' or sys.platform == 'cygwin':
              self.create_win32_sound_page()
          else:
              self.create_linux_sound_page()
-@@ -667,7 +667,7 @@ class ConfigWindow(gtk.Dialog, cfg.Confi
+@@ -808,7 +808,7 @@ class ConfigWindow(gtk.Dialog, cfg.Confi
              soundcard.synth.error_report_cb = solfege.win.display_error_message
          elif self.g_device_radio.get_active():
              try:
@@ -27,22 +27,14 @@
                      soundcard.initialise_winsynth(self.g_synth.get_active() - 1)
                  else:
                      soundcard.initialise_devicefile(
-@@ -682,20 +682,20 @@ class ConfigWindow(gtk.Dialog, cfg.Confi
-         if self.g_midiplayer_radio.get_active():
-             self.set_string("sound/type", "external-midiplayer")
-         elif self.g_device_radio.get_active():
--            if sys.platform == "win32":
-+            if sys.platform == "win32" or sys.platform == 'cygwin':
-                 self.set_string("sound/type", "winsynth")
-             else:
-                 self.set_string("sound/type", "sequencer-device")
+@@ -843,13 +843,13 @@ class ConfigWindow(gtk.Dialog, cfg.Confi
          else:
              assert self.g_fakesynth_radio.get_active()
              self.set_string("sound/type", "fake-synth")
 -        if sys.platform != 'win32':
 +        if sys.platform != 'win32' and sys.platform != 'cygwin':
              self.set_string("sound/device_file", self.g_device_file.child.get_text())
-         if soundcard.synth.m_type_major not in ('Midifile', 'Fake'):
+         if soundcard.synth.m_type_major in ('OSS', 'win32'):
              self.set_int("sound/synth_number", soundcard.synth.m_devnum)
              # we set the spin just in case m_devnum was changed by the
              # soundcard setup code, if it was out of range
@@ -51,8 +43,8 @@
                  self.g_synth_num.set_value(soundcard.synth.m_devnum)
              else:
                  self.g_synth.set_active(soundcard.synth.m_devnum + 1)
---- origsrc/solfege-3.18.7/solfege/soundcard/Makefile	2010-10-29 15:18:37.000000000 -0500
-+++ src/solfege-3.18.7/solfege/soundcard/Makefile	2011-01-25 22:25:56.467167900 -0600
+--- origsrc/solfege-3.20.4/solfege/soundcard/Makefile	2011-10-21 08:33:26.000000000 -0500
++++ src/solfege-3.20.4/solfege/soundcard/Makefile	2011-10-24 00:50:24.847109900 -0500
 @@ -64,12 +64,15 @@ solfege/soundcard/solfege_c_midi_wrap.c:
  # win32
  
@@ -61,28 +53,27 @@
 +TARGETS += solfege/soundcard/winmidi.dll
  endif
  
- PYDLL=/c/Windows/system32/python25.dll
+ PYDLL=win32/bin/python25.dll
  DLLWRAP=dllwrap
  
 +%/winmidi.dll: %/winmidi.o
-+	$(CC) $(LDFLAGS) -shared $< -o $@ -lpython2.6 -lwinmm
++	$(CC) $(LDFLAGS) -shared -o $@ $< -lpython2.6 -lwinmm
 +
  %/winmidi.pyd: %/winmidi.o
  	$(DLLWRAP) --dllname=$@ --def=solfege/soundcard/winmidi.def $< -o $@ -s --entry=_DllMain@12 -L/usr/i586-mingw32msvc/lib/ -lwinmm $(PYDLL)
  
-@@ -89,6 +92,10 @@ ifdef SWIG
+@@ -88,6 +91,9 @@ ifdef SWIG
+ 	$(INSTALL_DATA) solfege/soundcard/_solfege_c_midi.so $(DESTDIR)/$(libdir)/$(PACKAGE)/
    endif
  endif
++else
++	mkdir -p $(DESTDIR)/$(datadir)/$(PACKAGE)/solfege/soundcard/
++	$(INSTALL) solfege/soundcard/winmidi.dll $(DESTDIR)$(datadir)/$(PACKAGE)/solfege/soundcard/
  endif
-+ifeq ($(ENABLE_WINMIDI),yes)
-+	mkdir -p $(DESTDIR)/$(datadir)/$(PACKAGE)/$(PACKAGE)/soundcard/
-+	$(INSTALL) solfege/soundcard/winmidi.dll $(DESTDIR)$(datadir)/$(PACKAGE)/$(PACKAGE)/soundcard/
-+endif
  
  uninstall-soundcard:
- ifdef SWIG
---- origsrc/solfege-3.18.7/solfege/soundcard/winmidi.c	2010-10-29 15:18:37.000000000 -0500
-+++ src/solfege-3.18.7/solfege/soundcard/winmidi.c	2011-01-25 21:23:06.379761500 -0600
+--- origsrc/solfege-3.20.4/solfege/soundcard/winmidi.c	2011-10-21 08:33:26.000000000 -0500
++++ src/solfege-3.20.4/solfege/soundcard/winmidi.c	2011-10-24 00:50:46.063146900 -0500
 @@ -40,7 +40,7 @@
  
  #include <mmsystem.h>

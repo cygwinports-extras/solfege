@@ -3,7 +3,7 @@ inherit python
 DESCRIPTION="GNOME ear training program"
 HOMEPAGE="http://www.solfege.org/"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
-PATCH_URI="3.18.7-cygwin-winmidi.patch"
+PATCH_URI="3.20.4-cygwin-winmidi.patch"
 
 DIFF_EXCLUDES="help buildinfo.py configureoutput.py solfege.1 windowsinstaller.iss"
 
