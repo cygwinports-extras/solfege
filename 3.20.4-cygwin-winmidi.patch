@@ -57,7 +57,7 @@
  DLLWRAP=dllwrap
  
 +%/winmidi.dll: %/winmidi.o
-+	$(CC) $(LDFLAGS) -shared -o $@ $< -lpython2.6 -lwinmm
++	$(CC) $(LDFLAGS) -shared -o $@ $< -lpython2.7 -lwinmm
 +
  %/winmidi.pyd: %/winmidi.o
  	$(DLLWRAP) --dllname=$@ --def=solfege/soundcard/winmidi.def $< -o $@ -s --entry=_DllMain@12 -L/usr/i586-mingw32msvc/lib/ -lwinmm $(PYDLL)
