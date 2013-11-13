@@ -83,3 +83,30 @@
  //#include <stdio.h>
  //#include <string.h>
  //#include <stdlib.h>
+@@ -134,7 +134,7 @@ static void s_SetMidiError(const char *r
+ }
+ 
+ 
+-static void FAR PASCAL s_MidiCallback(HMIDISTRM hms, UINT uMsg, DWORD dwUser, DWORD dw1, DWORD dw2) {
++static void FAR PASCAL s_MidiCallback(HMIDISTRM hms, UINT uMsg, DWORD_PTR dwUser, DWORD_PTR dw1, DWORD_PTR dw2) {
+ 	WinmidiObject *obj = (WinmidiObject *) dwUser;
+ 	int retVal;
+ 
+@@ -299,7 +299,7 @@ int s_ResetMidiStream(WinmidiObject *obj
+ 	}
+ 
+ 	retVal = midiStreamOpen(&(obj->m_midiOut), &devNum, 1,
+-		(DWORD) s_MidiCallback, (DWORD) obj, CALLBACK_FUNCTION); //lint !e620
++		(DWORD_PTR) s_MidiCallback, (DWORD_PTR) obj, CALLBACK_FUNCTION); //lint !e620
+ 	if(retVal != MMSYSERR_NOERROR) {
+ 	s_SetMidiError("opening a MIDI stream", retVal);
+ 	return 0;
+@@ -441,7 +441,7 @@ static PyObject *Winmidi_New(PyObject *s
+ 	/* Open the MIDI output device. */
+ 	obj->m_midiOut = 0;
+ 	retVal = midiStreamOpen(&(obj->m_midiOut), &devNum, 1,
+-		(DWORD) s_MidiCallback, (DWORD) obj, CALLBACK_FUNCTION); //lint !e620
++		(DWORD_PTR) s_MidiCallback, (DWORD_PTR) obj, CALLBACK_FUNCTION); //lint !e620
+ 	if(retVal != MMSYSERR_NOERROR) {
+ 	s_SetMidiError("opening a MIDI stream", retVal);
+ 	Py_DECREF(obj);
