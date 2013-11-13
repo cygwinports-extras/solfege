@@ -1,0 +1,11 @@
+--- origsrc/solfege-3.22.2/default.config	2013-10-05 15:57:48.000000000 -0500
++++ src/solfege-3.22.2/default.config	2013-11-13 03:09:57.620162300 -0600
+@@ -79,7 +79,7 @@ text-editor=gedit
+ type=external-midiplayer
+ device_file=/dev/sequencer2
+ synth_number=2
+-wav_player=/usr/bin/aplay
++wav_player=/usr/bin/wavplay
+ wav_player_options=
+ midi_player=/usr/bin/timidity
+ midi_player_options=-idqq %s

@@ -1,16 +1,20 @@
 inherit python
 
 NAME="solfege"
-VERSION=3.20.8
+VERSION=3.22.2
 RELEASE=1
 CATEGORY="Audio"
 SUMMARY="GNOME ear training program"
 DESCRIPTION="Solfege is a free ear training program written in python using
 PyGTK. Ear training is a big subject with many connections to music theory and
 performance of music, so you need some basic knowledge about music theory."
+REQUIRES="timidity vorbis-tools wavplay"
 HOMEPAGE="http://www.solfege.org/"
-SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
-PATCH_URI="3.20.4-cygwin-winmidi.patch"
+SRC_URI="mirror://sourceforge/solfege/${NAME}-${VERSION}.tar.gz"
+PATCH_URI="
+	3.20.4-cygwin-winmidi.patch
+	3.22.2-wavplay.patch
+"
 
 DIFF_EXCLUDES="help buildinfo.py configureoutput.py solfege.1 windowsinstaller.iss"
 
